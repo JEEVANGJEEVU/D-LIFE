@@ -1,0 +1,366 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+:root {
+    --text-color: #F5F5F5;
+    --hover-color: #12f7ff;
+    --bg-color: #250821;
+    --second-bg-color: #292e33;
+    --big-font: 2.5rem;
+    --normal-font: 2rem;
+    --neon-box-shadow: 0 0 .5rem #12f7ff;
+    --h2-font: 3rem;
+    --font--neon-box-shadow:
+        0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3),
+        0 0 70px rgba(18, 247, 255, 0.3),
+        0 0 80px rgba(18, 247, 255, 0.3),
+        0 0 100px rgba(18, 247, 255, 0.3),
+        0 0 150px rgba(18, 247, 255, 0.3);
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    /* Change from static to fixed */
+    top: 0;
+    /* Align it to the top */
+    left: 0;
+    /* Align it to the left */
+    right: 0;
+    /* Align it to the right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #250821;
+    /* Keep the same background color */
+    color: white;
+    z-index: 1000;
+    /* Add a z-index to ensure it stays above other elements */
+}
+.logo{
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-left: 6%;
+}
+span{
+    color: var(--hover-color);
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 10px 20px;
+    animation: slideAnimation 2s ease forwards;
+    animation-delay: calc(.3s * var(--i));
+    opacity: 1;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    color: var(--hover-color);
+    text-shadow:
+        0 0 10px rgba(219, 18, 255, 0.6),
+        0 0 20px rgba(219, 18, 255, 0.6),
+        0 0 30px rgba(219, 18, 255, 0.6),
+        0 0 40px rgba(219, 18, 255, 0.6),
+        0 0 70px rgba(219, 18, 255, 0.6),
+        0 0 80px rgba(219, 18, 255, 0.6),
+        0 0 100px rgba(219, 18, 255, 0.6);
+}
+
+
+
+/* Slideshow */
+.slideshow {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slideshow img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+/* About Us */
+.about-us-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+    background-color: #f5f5f5;
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-text a {
+    color: #ffbf00;
+    text-decoration: none;
+}
+
+.about-text a:hover {
+    text-decoration: underline;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .about-us-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        margin-top: 40px;
+    }
+}
+
+
+/* Services */
+.services {
+    padding: 80px;
+    background-color: #fff;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-item {
+    flex-basis: 30%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffbf00;
+    color: white;
+}
+
+.service-item i {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Projects Gallery */
+.gallery {
+    padding: 80px;
+    background-color: #f5f5f5;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Contact Form */
+.contact-form {
+    padding: 80px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-form h2 {
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 60%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group button {
+    padding: 15px 30px;
+    background-color: var(--bg-color);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-group button:hover {
+    background-color: #333;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+    /* Size of social media icons */
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--hover-color);
+    /* Change color on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .navbar ul li {
+      margin-left: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .slideshow img {
+      height: 50%; /* Adjust slideshow height for smaller screens */
+    }
+  
+    .about-us-content {
+      padding: 20px;
+    }
+  
+    .about-text h2 {
+      font-size: 28px;
+    }
+  
+    .about-text p {
+      font-size: 16px;
+    }
+  
+    .services h2 {
+      font-size: 28px;
+    }
+  
+    .gallery h2 {
+      font-size: 28px;
+    }
+  
+    .contact-form h2 {
+      font-size: 28px;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      width: 100%; /* Full width inputs on mobile */
+    }
+  
+    .form-group button {
+      width: 100%; /* Full width button on mobile */
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .navbar ul li {
+      font-size: 7px; /* Smaller font size for mobile */
+    }
+    .slideshow img {
+        height: 100%; /* Adjust slideshow height for smaller screens */
+      }
+  
+    .service-item i {
+      font-size: 30px; /* Smaller icons on mobile */
+    }
+  
+    .gallery h2,
+    .services h2,
+    .contact-form h2 {
+      font-size: 24px; /* Adjust heading size for smaller screens */
+    }
+  
+    .about-text h2 {
+      font-size: 24px; /* Smaller heading in about us section */
+    }
+  
+    .about-text p {
+      font-size: 14px; /* Smaller paragraph text */
+    }
+  }
